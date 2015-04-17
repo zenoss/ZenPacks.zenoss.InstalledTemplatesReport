@@ -1,6 +1,5 @@
 # ZenPacks.zenoss.InstalledTemplatesReport
-=====================
-=====================
+
 
 Description
 ===========
