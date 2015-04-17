@@ -31,10 +31,12 @@ Components
 No device clases or components are added.
 
 
-General Comments
+Usage
 ================
 
-The ZenPack adds a report, Installed Templates, under REPORTS -> Monitoring Capabilites Report .
+    + Click Reports
+    + Under Reports, expand Monitoring Capabilites Reports
+    + Select Installed Templates to generate a report for all Templates in your Zenoss Box
 
 
 ZenPack installation
@@ -64,3 +66,4 @@ developer mode::
 
 Screenshots
 ===========
+![Alt text](/screenshots/Report_Example.png?raw=true)
