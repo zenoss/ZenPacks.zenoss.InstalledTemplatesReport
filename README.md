@@ -1,7 +1,5 @@
 # ZenPacks.zenoss.InstalledTemplatesReport
-
 =====================
-Installed Templates ZenPack 
 =====================
 
 Description
@@ -67,7 +65,7 @@ developer mode::
 
 Screenshots
 ===========
-|lotschy|
+
 
 
 Acknowledgements
