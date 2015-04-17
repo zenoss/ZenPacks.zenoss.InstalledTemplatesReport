@@ -63,8 +63,3 @@ developer mode::
 
 Screenshots
 ===========
-
-
-
-Acknowledgements
-================
