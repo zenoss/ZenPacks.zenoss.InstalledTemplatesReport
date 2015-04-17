@@ -1,4 +1,4 @@
-# ZenPacks.zenoss.InstalledTemplatesReport
+# Installed Templates Report
 
 
 Description
