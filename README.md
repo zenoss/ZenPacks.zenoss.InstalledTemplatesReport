@@ -35,8 +35,8 @@ Usage
 ================
 
     + Click Reports
-    + Under Reports, expand Monitoring Capabilites Reports
-    + Select Installed Templates to generate a report for all Templates in your Zenoss Box
+    + Under Reports, expand Monitoring Capabilities Reports
+    + Select Installed Templates to generate a report for all Templates in your Zenoss instance
 
 
 ZenPack installation

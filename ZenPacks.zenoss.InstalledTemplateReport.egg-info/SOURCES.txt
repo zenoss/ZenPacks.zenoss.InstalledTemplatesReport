@@ -63,13 +63,8 @@ ZenPacks/zenoss/InstalledTemplateReport/modeler/plugins/community/cmd/__init__.p
 ZenPacks/zenoss/InstalledTemplateReport/modeler/plugins/community/snmp/ExampleSNMP.py.example
 ZenPacks/zenoss/InstalledTemplateReport/modeler/plugins/community/snmp/__init__.py
 ZenPacks/zenoss/InstalledTemplateReport/objects/objects.xml
-ZenPacks/zenoss/InstalledTemplateReport/reports/Example_Reports/Example_Report.rpt.example
 ZenPacks/zenoss/InstalledTemplateReport/reports/Monitoring_Capabilities_Reports/Installed_Templates.rpt
-ZenPacks/zenoss/InstalledTemplateReport/reports/plugins/example_plugin.py
 ZenPacks/zenoss/InstalledTemplateReport/reports/plugins/installedTemplatesPlugin.py
-ZenPacks/zenoss/InstalledTemplateReport/reports/plugins/installedTemplatesPlugin.pyc
-ZenPacks/zenoss/InstalledTemplateReport/reports/plugins/monitorCapPlugins.pyc
-ZenPacks/zenoss/InstalledTemplateReport/reports/plugins/pythonplay.pyc
 ZenPacks/zenoss/InstalledTemplateReport/services/ExampleConfigService.py
 ZenPacks/zenoss/InstalledTemplateReport/services/__init__.py
 ZenPacks/zenoss/InstalledTemplateReport/tests/__init__.py
