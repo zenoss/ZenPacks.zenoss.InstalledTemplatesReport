@@ -56,14 +56,16 @@ $(document).ready(function(){
         if(data=='ZenPack Name')
         {
             hmtl_content = $('#zenpack_data').html();
+            data = 'ZenPack_Name';
         }
         else if(data=='Device Class')
         {
             hmtl_content = $('#device_data').html();
+            data = 'Device_Class';
         }
         else
         {
-            data = 'Template Name'
+            data = 'Template_Name'
             hmtl_content = $('#template_data').html();
 
         }
@@ -72,7 +74,17 @@ $(document).ready(function(){
         doc.fromHTML(hmtl_content, 15, 15, {
             'width': 170,'elementHandlers': specialElementHandlers
         });
-        doc.save(data+'.pdf');
+
+        var currentDate = new Date();
+        var datetime = (currentDate.getMonth()+1) + "/"
+                + currentDate.getDate()  + "/"
+                + currentDate.getFullYear() + "@"
+                + currentDate.getHours() + ":"
+                + currentDate.getMinutes() + ":"
+                + currentDate.getSeconds();
+
+        data = data + '-' + datetime
+        doc.save(data + '.pdf');
     });
 });
 </script>
