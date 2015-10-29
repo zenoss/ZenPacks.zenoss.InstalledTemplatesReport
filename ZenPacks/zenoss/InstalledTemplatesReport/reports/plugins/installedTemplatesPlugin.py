@@ -125,10 +125,15 @@ class installedTemplatesPlugin(object):
                     except:
                         threshold_max = None
 
+                    try:
+                        threshold_type = threshold.factory_type_information[0]['actions'][0]['name']
+                    except:
+                        threshold_type = None
+
+                    import pdb; pdb.set_trace()
                     thresholds_list.append(Record(
                         threshold_id=threshold.id,
-                        threshold_type=threshold.factory_type_information[
-                            0]['actions'][0]['name'],
+                        threshold_type=threshold_type,
                         threshold_min=threshold_min,
                         threshold_max=threshold_max,
                         threshold_description=threshold.description,
