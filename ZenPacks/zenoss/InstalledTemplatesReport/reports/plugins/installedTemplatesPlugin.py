@@ -130,7 +130,6 @@ class installedTemplatesPlugin(object):
                     except:
                         threshold_type = None
 
-                    import pdb; pdb.set_trace()
                     thresholds_list.append(Record(
                         threshold_id=threshold.id,
                         threshold_type=threshold_type,
