@@ -18,3 +18,7 @@ The user has the ability to view the templates by sorting through Template Name,
 == Sample Report ==
 
 [[File:Installed_Templates_Report_Example.png|800px]]
+
+== Changes ==
+
+# Added ability to export Report to PDF

@@ -1,6 +1,15 @@
 # Installed Templates Report
 
 
+Changes
+=======
+
+1.1.0
+-----
+
+    + Added ability to export Report to PDF
+
+
 Description
 ===========
 
