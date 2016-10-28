@@ -161,7 +161,7 @@ $(document).ready(function(){
 
                                  <tal:block tal:repeat="dp ds/datapoints_info">
                                     <p style = "margin-left: 44px;">DataPoint: <em tal:content="dp/datapoint_id"/>;&nbsp;&nbsp; Type: <em tal:content="dp/datapoint_type"/></p>
-                                    <p style = "margin-left: 72px;"tal:condition="dp/datapoint_description">Description: <em tal:content="dp/datapoint_description"/></p>
+                                    <p style = "margin-left: 72px;" tal:condition="dp/datapoint_description">Description: <em tal:content="dp/datapoint_description"/></p>
                                  </tal:block>
                             </tal:block>
 
@@ -178,10 +178,10 @@ $(document).ready(function(){
                             <!-- GraphDefs -->
                             <tal:block tal:repeat="gd r/graphdefs_info">
                                 <p>Name: <em tal:content="gd/graphDef_id"/><span tal:condition="gd/graphDef_unit">; &nbsp; Unit: <em tal:content="gd/graphDef_unit"/></span></p>
-                                <p style = "margin-left: 22px;"tal:condition="gd/graphDef_description"> Description: <em tal:content="gd/graphDef_description"/></p>
+                                <p style = "margin-left: 22px;" tal:condition="gd/graphDef_description"> Description: <em tal:content="gd/graphDef_description"/></p>
                                     <tal:block tal:repeat="gp gd/graphpoints_info">
                                         <p>&nbsp;&nbsp; GraphPoints: <em tal:content="gp/graphPoint_id"/>; &nbsp; Type: <em tal:content="gp/graphPoint_type"/></p>
-                                        <p style = "margin-left: 72px;"tal:condition="gp/graphPoint_description">Description: <em tal:content="gp/graphPoint_description"/></p>
+                                        <p style = "margin-left: 72px;" tal:condition="gp/graphPoint_description">Description: <em tal:content="gp/graphPoint_description"/></p>
                                     </tal:block>
                             </tal:block>
 
@@ -225,7 +225,7 @@ $(document).ready(function(){
                             <!-- DataSources -->
                             <tal:block tal:repeat="ds r/datasources_info">
                                 <p>DataSource: <em tal:content="ds/datasource_id"/>;&nbsp;&nbsp; SSH Enabled: <em tal:content="ds/datasource_ssh_enabled"/>;&nbsp;&nbsp; Type: <em tal:content="ds/datasource_type"/></p>
-                                <p style = "margin-left: 22px;"tal:condition="ds/datasource_description"> Description: <em tal:content="ds/datasource_description"/></p>
+                                <p style = "margin-left: 22px;" tal:condition="ds/datasource_description"> Description: <em tal:content="ds/datasource_description"/></p>
 
                                  <tal:block tal:repeat="dp ds/datapoints_info">
                                     <p style = "margin-left: 44px;"> DataPoint: <em tal:content="dp/datapoint_id"/>;&nbsp;&nbsp; Type: <em tal:content="dp/datapoint_type"/></p>
@@ -238,7 +238,7 @@ $(document).ready(function(){
                             <!-- Thresholds -->
                             <tal:block tal:repeat="th r/thresholds_info">
                                 <p>Name: <em tal:content="th/threshold_id"/>;&nbsp;&nbsp;Type: <em tal:content="th/threshold_type"/><span tal:condition="th/threshold_min">;&nbsp;&nbsp; Min: <em tal:content="th/threshold_min"/></span><span tal:condition="th/threshold_max">;&nbsp;&nbsp;Max: <em tal:content="th/threshold_max"/></span></p>
-                                <p style = "margin-left: 22px;"tal:condition="th/threshold_description"> Description: <em tal:content="th/threshold_description"/></p>
+                                <p style = "margin-left: 22px;" tal:condition="th/threshold_description"> Description: <em tal:content="th/threshold_description"/></p>
                             </tal:block>
                             
 
@@ -249,7 +249,7 @@ $(document).ready(function(){
                                 <p style = "margin-left: 22px;" tal:condition="gd/graphDef_description"> Description: <em tal:content="gd/graphDef_description"/></p>
                                     <tal:block tal:repeat="gp gd/graphpoints_info">
                                         <p>&nbsp;&nbsp; GraphPoints: <em tal:content="gp/graphPoint_id"/>; &nbsp; Type: <em tal:content="gp/graphPoint_type"/></p>
-                                        <p style = "margin-left: 72px;"tal:condition="gp/graphPoint_description">Description: <em tal:content="gp/graphPoint_description"/></p>
+                                        <p style = "margin-left: 72px;" tal:condition="gp/graphPoint_description">Description: <em tal:content="gp/graphPoint_description"/></p>
                                     </tal:block>
                             </tal:block>
 
@@ -293,11 +293,11 @@ $(document).ready(function(){
                             <!-- DataSources -->
                             <tal:block tal:repeat="ds r/datasources_info">
                                 <p>DataSource: <em tal:content="ds/datasource_id"/>;&nbsp;&nbsp; SSH Enabled: <em tal:content="ds/datasource_ssh_enabled"/>;&nbsp;&nbsp; Type: <em tal:content="ds/datasource_type"/></p>
-                                <p style = "margin-left: 22px;"tal:condition="ds/datasource_description"> Description: <em tal:content="ds/datasource_description"/></p>
+                                <p style = "margin-left: 22px;" tal:condition="ds/datasource_description"> Description: <em tal:content="ds/datasource_description"/></p>
 
                                  <tal:block tal:repeat="dp ds/datapoints_info">
                                     <p style = "margin-left: 44px;"> DataPoint: <em tal:content="dp/datapoint_id"/>;&nbsp;&nbsp; Type: <em tal:content="dp/datapoint_type"/></p>
-                                    <p style = "margin-left: 72px;"tal:condition="dp/datapoint_description"> Description: <em tal:content="dp/datapoint_description"/></p>
+                                    <p style = "margin-left: 72px;" tal:condition="dp/datapoint_description"> Description: <em tal:content="dp/datapoint_description"/></p>
                                  </tal:block>
                             </tal:block>
 
@@ -317,7 +317,7 @@ $(document).ready(function(){
                                 <p style = "margin-left: 22px;" tal:condition="gd/graphDef_description"> Description: <em tal:content="gd/graphDef_description"/></p>
                                     <tal:block tal:repeat="gp gd/graphpoints_info">
                                         <p>&nbsp;&nbsp; GraphPoints: <em tal:content="gp/graphPoint_id"/>; &nbsp; Type: <em tal:content="gp/graphPoint_type"/></p>
-                                        <p style = "margin-left: 72px;"tal:condition="gp/graphPoint_description"> Description: <em tal:content="gp/graphPoint_description"/></p>
+                                        <p style = "margin-left: 72px;" tal:condition="gp/graphPoint_description"> Description: <em tal:content="gp/graphPoint_description"/></p>
                                     </tal:block>
                             </tal:block>
 

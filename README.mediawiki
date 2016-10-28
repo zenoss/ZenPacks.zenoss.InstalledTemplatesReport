@@ -21,4 +21,8 @@ The user has the ability to view the templates by sorting through Template Name,
 
 == Changes ==
 
-# Added ability to export Report to PDF
+;1.1.1
+*Fixed PTRuntimeError in 4.2.5 (ZEN-24616)
+
+;1.1.0
+* Added ability to export Report to PDF
