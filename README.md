@@ -4,6 +4,11 @@
 Changes
 =======
 
+1.1.1
+-----
+
+    + Fixed PTRuntimeError in 4.2.5 (ZEN-24616)
+
 1.1.0
 -----
 
