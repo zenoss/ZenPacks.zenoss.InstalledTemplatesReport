@@ -26,20 +26,23 @@
     padding-top: 60px;
     margin-top: -60px;
 }
-.bs-docs-sidebar>ul{
-    position: fixed;
-    overflow-y: auto;
-    height: 100%;
-    padding-bottom: 60px; 
-}
+
 .bs-docs-content{
     position: fixed;
-    overflow-y: auto; 
-    height: 100%;
-    padding-bottom: 60px;
+    overflow-y: auto;
+    top: 60px;
+    bottom: 0;
 }
 .space_22{
     margin-left: 22px;
+}
+
+.zen-category-sidebar {
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 </style>
@@ -129,8 +132,8 @@ $(document).ready(function(){
         <!-- Template Category -->
 
         <div id="template_category" class="tab-pane fade in active">
-            <div class="col-xs-3 bs-docs-sidebar">
-                <ul class="nav nav-tabs nav-stacked fixed">
+            <div class="col-xs-3 bs-docs-sidebar zen-category-sidebar">
+                <ul class="nav nav-tabs nav-stacked">
                     <h4>Templates: Table of Contents</h4>
                     <tal:block tal:repeat="t objects">
                         <tal:block tal:repeat="r t/template_sort">
@@ -140,8 +143,8 @@ $(document).ready(function(){
                     </tal:block>
                 </ul>
             </div>
-            <div class="col-xs-9">
-                <div id = "template_data" class="bs-docs-content" style= " position: fixed; overflow-y: auto; height: 100%; padding-bottom: 60px;">
+            <div class="col-xs-9 col-xs-offset-3">
+                <div id = "template_data" class="bs-docs-content">
                     <tal:block tal:repeat="t objects">
 
                         <tal:block tal:repeat="r t/template_sort">
@@ -197,7 +200,7 @@ $(document).ready(function(){
         <!-- Device Category -->
 
         <div id="device_category" class="tab-pane fade">
-            <div class="col-xs-3 bs-docs-sidebar">
+            <div class="col-xs-3 bs-docs-sidebar zen-category-sidebar">
                 <ul class="nav nav-tabs nav-stacked fixed">
                     <h4>Devices: Table of Contents</h4>
                     <tal:block tal:repeat="t objects">
@@ -208,8 +211,8 @@ $(document).ready(function(){
                     </tal:block>
                 </ul>
             </div>
-            <div class="col-xs-9">
-                <div id = "device_data" class="bs-docs-content"  style= " position: fixed; overflow-y: auto; height: 100%; padding-bottom: 60px;">
+            <div class="col-xs-9 col-xs-offset-3">
+                <div id = "device_data" class="bs-docs-content">
                     <tal:block tal:repeat="t objects">
 
                         <tal:block tal:repeat="r t/device_sort">
@@ -265,7 +268,7 @@ $(document).ready(function(){
         <!-- ZenPack Category -->
 
         <div id="zenpack_category" class="tab-pane fade">
-            <div class="col-xs-3 bs-docs-sidebar">
+            <div class="col-xs-3 bs-docs-sidebar zen-category-sidebar">
                 <ul class="nav nav-tabs nav-stacked fixed">
                     <h4>ZenPacks: Table of Contents</h4>
                     <tal:block tal:repeat="t objects">
@@ -276,8 +279,8 @@ $(document).ready(function(){
                     </tal:block>
                 </ul>
             </div>
-            <div class="col-xs-9">
-                <div id = "zenpack_data" class="bs-docs-content"  style= " position: fixed; overflow-y: auto; height: 100%; padding-bottom: 60px;">
+            <div class="col-xs-9 col-xs-offset-3">
+                <div id = "zenpack_data" class="bs-docs-content">
                     <tal:block tal:repeat="t objects">
 
                         <tal:block tal:repeat="r t/zenpack_sort">
