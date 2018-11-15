@@ -25,12 +25,14 @@
 .group{
     padding-top: 60px;
     margin-top: -60px;
+    margin-left: 10px;
 }
 .bs-docs-sidebar>ul{
     position: fixed;
     overflow-y: auto;
     height: 100%;
-    padding-bottom: 60px; 
+    padding-bottom: 60px;
+    width: inherit;
 }
 .bs-docs-content{
     position: fixed;
@@ -40,6 +42,9 @@
 }
 .space_22{
     margin-left: 22px;
+}
+.paragraph{
+    margin: 0 10px 10px;
 }
 
 </style>
@@ -148,15 +153,15 @@ $(document).ready(function(){
 
                             <h3 id="?" tal:attributes="id string:${r/primary}" class="group" style = " padding-top: 60px; margin-top: -60px;"><strong tal:content="r/primary"/></h3>
                             <hr>
-                            <p><strong>Device Class: </strong><em tal:content="r/secondary"/></p>
-                            <p><strong>ZenPack Name: </strong><em tal:content="r/tertiary"/></p>
-                            <p tal:condition = "r/template_description"><strong>Description:</strong> <em tal:content="r/template_description"/></p>
+                            <p class="paragraph"><strong>Device Class: </strong><em tal:content="r/secondary"/></p>
+                            <p class="paragraph"><strong>ZenPack Name: </strong><em tal:content="r/tertiary"/></p>
+                            <p class="paragraph" tal:condition = "r/template_description"><strong>Description:</strong> <em tal:content="r/template_description"/></p>
                             
                             
-                            <p tal:condition = "r/datasources_info"><strong>Data Sources:</strong></p>
+                            <p class="paragraph" tal:condition = "r/datasources_info"><strong>Data Sources:</strong></p>
                             <!-- DataSources -->
                             <tal:block tal:repeat="ds r/datasources_info">
-                                <p>DataSource: <em tal:content="ds/datasource_id"/>;&nbsp;&nbsp; SSH Enabled: <em tal:content="ds/datasource_ssh_enabled"/>;&nbsp;&nbsp; Type: <em tal:content="ds/datasource_type"/></p>
+                                <p class="paragraph">DataSource: <em tal:content="ds/datasource_id"/>;&nbsp;&nbsp; SSH Enabled: <em tal:content="ds/datasource_ssh_enabled"/>;&nbsp;&nbsp; Type: <em tal:content="ds/datasource_type"/></p>
                                 <p style = "margin-left: 22px;" tal:condition="ds/datasource_description">Description: <em tal:content="ds/datasource_description"/></p>
 
                                  <tal:block tal:repeat="dp ds/datapoints_info">
@@ -166,19 +171,19 @@ $(document).ready(function(){
                             </tal:block>
 
                             
-                            <p tal:condition = "r/thresholds_info"><strong>Thresholds:</strong></p>
+                            <p class="paragraph" tal:condition = "r/thresholds_info"><strong>Thresholds:</strong></p>
                             <!-- Thresholds -->
                             <tal:block tal:repeat="th r/thresholds_info">
-                                <p>Name: <em tal:content="th/threshold_id"/>;&nbsp;&nbsp;Type: <em tal:content="th/threshold_type"/><span tal:condition="th/threshold_min">;&nbsp;&nbsp; Min: <em tal:content="th/threshold_min"/></span><span tal:condition="th/threshold_max">;&nbsp;&nbsp;Max: <em tal:content="th/threshold_max"/></span></p>
+                                <p class="paragraph">Name: <em tal:content="th/threshold_id"/>;&nbsp;&nbsp;Type: <em tal:content="th/threshold_type"/><span tal:condition="th/threshold_min">;&nbsp;&nbsp; Min: <em tal:content="th/threshold_min"/></span><span tal:condition="th/threshold_max">;&nbsp;&nbsp;Max: <em tal:content="th/threshold_max"/></span></p>
                                 <p style = "margin-left: 22px;" tal:condition="th/threshold_description">Description: <em tal:content="th/threshold_description"/></p>
                             </tal:block>
                             
 
-                            <p tal:condition = "r/graphdefs_info"><strong>Graph Definitions:</strong></p>
+                            <p class="paragraph" tal:condition = "r/graphdefs_info"><strong>Graph Definitions:</strong></p>
                             <!-- GraphDefs -->
                             <tal:block tal:repeat="gd r/graphdefs_info">
-                                <p>Name: <em tal:content="gd/graphDef_id"/><span tal:condition="gd/graphDef_unit">; &nbsp; Unit: <em tal:content="gd/graphDef_unit"/></span></p>
-                                <p style = "margin-left: 22px;" tal:condition="gd/graphDef_description"> Description: <em tal:content="gd/graphDef_description"/></p>
+                                <p class="paragraph">Name: <em tal:content="gd/graphDef_id"/><span tal:condition="gd/graphDef_unit">; &nbsp; Unit: <em tal:content="gd/graphDef_unit"/></span></p>
+                                <p class="paragraph" style = "margin-left: 22px;" tal:condition="gd/graphDef_description"> Description: <em tal:content="gd/graphDef_description"/></p>
                                     <tal:block tal:repeat="gp gd/graphpoints_info">
                                         <p>&nbsp;&nbsp; GraphPoints: <em tal:content="gp/graphPoint_id"/>; &nbsp; Type: <em tal:content="gp/graphPoint_type"/></p>
                                         <p style = "margin-left: 72px;" tal:condition="gp/graphPoint_description">Description: <em tal:content="gp/graphPoint_description"/></p>
@@ -216,15 +221,15 @@ $(document).ready(function(){
 
                             <h3 id="?" tal:attributes="id string:${r/primary}" class = "group" style = " padding-top: 60px; margin-top: -60px;"><strong tal:content="r/primary"/></h3>
                             <hr>
-                            <p><strong>Template Name: </strong><em tal:content="r/secondary"/></p>
-                            <p><strong>ZenPack Name: </strong><em tal:content="r/tertiary"/></p>
-                            <p tal:condition = "r/template_description"><strong>Description:</strong> <em tal:content="r/template_description"/></p>
+                            <p class="paragraph"><strong>Template Name: </strong><em tal:content="r/secondary"/></p>
+                            <p class="paragraph"><strong>ZenPack Name: </strong><em tal:content="r/tertiary"/></p>
+                            <p class="paragraph" tal:condition = "r/template_description"><strong>Description:</strong> <em tal:content="r/template_description"/></p>
                             
                             
                             <p tal:condition = "r/datasources_info"><strong>Data Sources:</strong></p>
                             <!-- DataSources -->
                             <tal:block tal:repeat="ds r/datasources_info">
-                                <p>DataSource: <em tal:content="ds/datasource_id"/>;&nbsp;&nbsp; SSH Enabled: <em tal:content="ds/datasource_ssh_enabled"/>;&nbsp;&nbsp; Type: <em tal:content="ds/datasource_type"/></p>
+                                <p class="paragraph">DataSource: <em tal:content="ds/datasource_id"/>;&nbsp;&nbsp; SSH Enabled: <em tal:content="ds/datasource_ssh_enabled"/>;&nbsp;&nbsp; Type: <em tal:content="ds/datasource_type"/></p>
                                 <p style = "margin-left: 22px;" tal:condition="ds/datasource_description"> Description: <em tal:content="ds/datasource_description"/></p>
 
                                  <tal:block tal:repeat="dp ds/datapoints_info">
@@ -237,7 +242,7 @@ $(document).ready(function(){
                             <p tal:condition = "r/thresholds_info"><strong>Thresholds:</strong></p>
                             <!-- Thresholds -->
                             <tal:block tal:repeat="th r/thresholds_info">
-                                <p>Name: <em tal:content="th/threshold_id"/>;&nbsp;&nbsp;Type: <em tal:content="th/threshold_type"/><span tal:condition="th/threshold_min">;&nbsp;&nbsp; Min: <em tal:content="th/threshold_min"/></span><span tal:condition="th/threshold_max">;&nbsp;&nbsp;Max: <em tal:content="th/threshold_max"/></span></p>
+                                <p class="paragraph">Name: <em tal:content="th/threshold_id"/>;&nbsp;&nbsp;Type: <em tal:content="th/threshold_type"/><span tal:condition="th/threshold_min">;&nbsp;&nbsp; Min: <em tal:content="th/threshold_min"/></span><span tal:condition="th/threshold_max">;&nbsp;&nbsp;Max: <em tal:content="th/threshold_max"/></span></p>
                                 <p style = "margin-left: 22px;" tal:condition="th/threshold_description"> Description: <em tal:content="th/threshold_description"/></p>
                             </tal:block>
                             
@@ -245,7 +250,7 @@ $(document).ready(function(){
                             <p tal:condition = "r/graphdefs_info"><strong>Graph Definitions:</strong></p>
                             <!-- GraphDefs -->
                             <tal:block tal:repeat="gd r/graphdefs_info">
-                                <p>Name: <em tal:content="gd/graphDef_id"/><span tal:condition="gd/graphDef_unit">; &nbsp; Unit: <em tal:content="gd/graphDef_unit"/></span></p>
+                                <p class="paragraph">Name: <em tal:content="gd/graphDef_id"/><span tal:condition="gd/graphDef_unit">; &nbsp; Unit: <em tal:content="gd/graphDef_unit"/></span></p>
                                 <p style = "margin-left: 22px;" tal:condition="gd/graphDef_description"> Description: <em tal:content="gd/graphDef_description"/></p>
                                     <tal:block tal:repeat="gp gd/graphpoints_info">
                                         <p>&nbsp;&nbsp; GraphPoints: <em tal:content="gp/graphPoint_id"/>; &nbsp; Type: <em tal:content="gp/graphPoint_type"/></p>
@@ -284,16 +289,16 @@ $(document).ready(function(){
 
                             <h3 id="?" tal:attributes="id string:${r/primary}" class="group" style = " padding-top: 60px; margin-top: -60px;"><strong tal:content="r/primary"/></h3>
                             <hr>
-                            <p><strong>Template Name: </strong><em tal:content="r/secondary"/></p>
-                            <p><strong>Device Class: </strong><em tal:content="r/tertiary"/></p>
-                            <p tal:condition = "r/template_description"><strong>Description:</strong> <em tal:content="r/template_description"/></p>
+                            <p class="paragraph"><strong>Template Name: </strong><em tal:content="r/secondary"/></p>
+                            <p class="paragraph"><strong>Device Class: </strong><em tal:content="r/tertiary"/></p>
+                            <p class="paragraph" tal:condition = "r/template_description"><strong>Description:</strong> <em tal:content="r/template_description"/></p>
                             
                             
                             <p tal:condition = "r/datasources_info"><strong>Data Sources:</strong></p>
                             <!-- DataSources -->
                             <tal:block tal:repeat="ds r/datasources_info">
-                                <p>DataSource: <em tal:content="ds/datasource_id"/>;&nbsp;&nbsp; SSH Enabled: <em tal:content="ds/datasource_ssh_enabled"/>;&nbsp;&nbsp; Type: <em tal:content="ds/datasource_type"/></p>
-                                <p style = "margin-left: 22px;" tal:condition="ds/datasource_description"> Description: <em tal:content="ds/datasource_description"/></p>
+                                <p class="paragraph">DataSource: <em tal:content="ds/datasource_id"/>;&nbsp;&nbsp; SSH Enabled: <em tal:content="ds/datasource_ssh_enabled"/>;&nbsp;&nbsp; Type: <em tal:content="ds/datasource_type"/></p>
+                                <p class="paragraph" tyle = "margin-left: 22px;" tal:condition="ds/datasource_description"> Description: <em tal:content="ds/datasource_description"/></p>
 
                                  <tal:block tal:repeat="dp ds/datapoints_info">
                                     <p style = "margin-left: 44px;"> DataPoint: <em tal:content="dp/datapoint_id"/>;&nbsp;&nbsp; Type: <em tal:content="dp/datapoint_type"/></p>
@@ -305,7 +310,7 @@ $(document).ready(function(){
                             <p tal:condition = "r/thresholds_info"><strong>Thresholds:</strong></p>
                             <!-- Thresholds -->
                             <tal:block tal:repeat="th r/thresholds_info">
-                                <p>Name: <em tal:content="th/threshold_id"/>;&nbsp;&nbsp;Type: <em tal:content="th/threshold_type"/><span tal:condition="th/threshold_min">;&nbsp;&nbsp; Min: <em tal:content="th/threshold_min"/></span><span tal:condition="th/threshold_max">;&nbsp;&nbsp;Max: <em tal:content="th/threshold_max"/></span></p>
+                                <p class="paragraph">Name: <em tal:content="th/threshold_id"/>;&nbsp;&nbsp;Type: <em tal:content="th/threshold_type"/><span tal:condition="th/threshold_min">;&nbsp;&nbsp; Min: <em tal:content="th/threshold_min"/></span><span tal:condition="th/threshold_max">;&nbsp;&nbsp;Max: <em tal:content="th/threshold_max"/></span></p>
                                 <p style = "margin-left: 22px;" tal:condition="th/threshold_description">Description: <em tal:content="th/threshold_description"/></p>
                             </tal:block>
                             
@@ -313,8 +318,8 @@ $(document).ready(function(){
                             <p tal:condition = "r/graphdefs_info"><strong>Graph Definitions:</strong></p>
                             <!-- GraphDefs -->
                             <tal:block tal:repeat="gd r/graphdefs_info">
-                                <p>Name: <em tal:content="gd/graphDef_id"/><span tal:condition="gd/graphDef_unit">; &nbsp; Unit: <em tal:content="gd/graphDef_unit"/></span></p>
-                                <p style = "margin-left: 22px;" tal:condition="gd/graphDef_description"> Description: <em tal:content="gd/graphDef_description"/></p>
+                                <p class="paragraph">Name: <em tal:content="gd/graphDef_id"/><span tal:condition="gd/graphDef_unit">; &nbsp; Unit: <em tal:content="gd/graphDef_unit"/></span></p>
+                                <p class="paragraph" style = "margin-left: 22px;" tal:condition="gd/graphDef_description"> Description: <em tal:content="gd/graphDef_description"/></p>
                                     <tal:block tal:repeat="gp gd/graphpoints_info">
                                         <p>&nbsp;&nbsp; GraphPoints: <em tal:content="gp/graphPoint_id"/>; &nbsp; Type: <em tal:content="gp/graphPoint_type"/></p>
                                         <p style = "margin-left: 72px;" tal:condition="gp/graphPoint_description"> Description: <em tal:content="gp/graphPoint_description"/></p>
