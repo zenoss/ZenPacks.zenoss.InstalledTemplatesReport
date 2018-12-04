@@ -4,14 +4,21 @@
 Changes
 =======
 
-1.1.1
+1.1.2
+-----
 
-    + Fixed PTRuntimeError in 4.2.5 (ZEN-24616)
+    + Fixed scroll position in report's layout. (ZPS-4137)
+    + Fix PDF export feature. (ZPS-4917)
+
+1.1.1
+-----
+
+    + Fixed PTRuntimeError in 4.2.5. (ZEN-24616)
 
 1.1.0
 -----
 
-    + Added ability to export Report to PDF
+    + Added ability to export Report to PDF.
 
 
 Description
