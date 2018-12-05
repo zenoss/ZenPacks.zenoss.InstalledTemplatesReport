@@ -1,0 +1,8 @@
+# Python
+*.py[co]
+*.egg-info
+*.egg
+docs/generated.html
+
+# Mac OS
+.DS_Store
