@@ -11,12 +11,11 @@
 <script src="/++resource++monitorcaprpt/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 
 <!--                        jsPDF libraries                        -->
+<!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"></script> -->
 <script src="/++resource++monitorcaprpt/jsPDF/dist/jspdf.debug.js"></script>
 <script src="/++resource++monitorcaprpt/jsPDF/dist/jspdf.min.js"></script>
 
-
-<!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.debug.js"></script>
-<script src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.min.js"></script> -->
 <style type="text/css">
 .bs-example{
     margin : 20px;
@@ -26,20 +25,23 @@
     padding-top: 60px;
     margin-top: -60px;
 }
-.bs-docs-sidebar>ul{
-    position: fixed;
-    overflow-y: auto;
-    height: 100%;
-    padding-bottom: 60px; 
-}
+
 .bs-docs-content{
     position: fixed;
-    overflow-y: auto; 
-    height: 100%;
-    padding-bottom: 60px;
+    overflow-y: auto;
+    top: 60px;
+    bottom: 0;
 }
 .space_22{
     margin-left: 22px;
+}
+
+.zen-category-sidebar {
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 </style>
@@ -122,15 +124,15 @@ $(document).ready(function(){
                 </li>
             </ul>
         </div><!-- /.navbar-collapse -->
-        
+
     </nav>
     <div class="row tab-content">
 
         <!-- Template Category -->
 
         <div id="template_category" class="tab-pane fade in active">
-            <div class="col-xs-3 bs-docs-sidebar">
-                <ul class="nav nav-tabs nav-stacked fixed">
+            <div class="col-xs-3 bs-docs-sidebar zen-category-sidebar">
+                <ul class="nav nav-tabs nav-stacked">
                     <h4>Templates: Table of Contents</h4>
                     <tal:block tal:repeat="t objects">
                         <tal:block tal:repeat="r t/template_sort">
@@ -140,8 +142,8 @@ $(document).ready(function(){
                     </tal:block>
                 </ul>
             </div>
-            <div class="col-xs-9">
-                <div id = "template_data" class="bs-docs-content" style= " position: fixed; overflow-y: auto; height: 100%; padding-bottom: 60px;">
+            <div class="col-xs-9 col-xs-offset-3">
+                <div id = "template_data" class="bs-docs-content">
                     <tal:block tal:repeat="t objects">
 
                         <tal:block tal:repeat="r t/template_sort">
@@ -151,8 +153,8 @@ $(document).ready(function(){
                             <p><strong>Device Class: </strong><em tal:content="r/secondary"/></p>
                             <p><strong>ZenPack Name: </strong><em tal:content="r/tertiary"/></p>
                             <p tal:condition = "r/template_description"><strong>Description:</strong> <em tal:content="r/template_description"/></p>
-                            
-                            
+
+
                             <p tal:condition = "r/datasources_info"><strong>Data Sources:</strong></p>
                             <!-- DataSources -->
                             <tal:block tal:repeat="ds r/datasources_info">
@@ -165,14 +167,14 @@ $(document).ready(function(){
                                  </tal:block>
                             </tal:block>
 
-                            
+
                             <p tal:condition = "r/thresholds_info"><strong>Thresholds:</strong></p>
                             <!-- Thresholds -->
                             <tal:block tal:repeat="th r/thresholds_info">
                                 <p>Name: <em tal:content="th/threshold_id"/>;&nbsp;&nbsp;Type: <em tal:content="th/threshold_type"/><span tal:condition="th/threshold_min">;&nbsp;&nbsp; Min: <em tal:content="th/threshold_min"/></span><span tal:condition="th/threshold_max">;&nbsp;&nbsp;Max: <em tal:content="th/threshold_max"/></span></p>
                                 <p style = "margin-left: 22px;" tal:condition="th/threshold_description">Description: <em tal:content="th/threshold_description"/></p>
                             </tal:block>
-                            
+
 
                             <p tal:condition = "r/graphdefs_info"><strong>Graph Definitions:</strong></p>
                             <!-- GraphDefs -->
@@ -197,7 +199,7 @@ $(document).ready(function(){
         <!-- Device Category -->
 
         <div id="device_category" class="tab-pane fade">
-            <div class="col-xs-3 bs-docs-sidebar">
+            <div class="col-xs-3 bs-docs-sidebar zen-category-sidebar">
                 <ul class="nav nav-tabs nav-stacked fixed">
                     <h4>Devices: Table of Contents</h4>
                     <tal:block tal:repeat="t objects">
@@ -208,8 +210,8 @@ $(document).ready(function(){
                     </tal:block>
                 </ul>
             </div>
-            <div class="col-xs-9">
-                <div id = "device_data" class="bs-docs-content"  style= " position: fixed; overflow-y: auto; height: 100%; padding-bottom: 60px;">
+            <div class="col-xs-9 col-xs-offset-3">
+                <div id = "device_data" class="bs-docs-content">
                     <tal:block tal:repeat="t objects">
 
                         <tal:block tal:repeat="r t/device_sort">
@@ -219,8 +221,8 @@ $(document).ready(function(){
                             <p><strong>Template Name: </strong><em tal:content="r/secondary"/></p>
                             <p><strong>ZenPack Name: </strong><em tal:content="r/tertiary"/></p>
                             <p tal:condition = "r/template_description"><strong>Description:</strong> <em tal:content="r/template_description"/></p>
-                            
-                            
+
+
                             <p tal:condition = "r/datasources_info"><strong>Data Sources:</strong></p>
                             <!-- DataSources -->
                             <tal:block tal:repeat="ds r/datasources_info">
@@ -233,14 +235,14 @@ $(document).ready(function(){
                                  </tal:block>
                             </tal:block>
 
-                            
+
                             <p tal:condition = "r/thresholds_info"><strong>Thresholds:</strong></p>
                             <!-- Thresholds -->
                             <tal:block tal:repeat="th r/thresholds_info">
                                 <p>Name: <em tal:content="th/threshold_id"/>;&nbsp;&nbsp;Type: <em tal:content="th/threshold_type"/><span tal:condition="th/threshold_min">;&nbsp;&nbsp; Min: <em tal:content="th/threshold_min"/></span><span tal:condition="th/threshold_max">;&nbsp;&nbsp;Max: <em tal:content="th/threshold_max"/></span></p>
                                 <p style = "margin-left: 22px;" tal:condition="th/threshold_description"> Description: <em tal:content="th/threshold_description"/></p>
                             </tal:block>
-                            
+
 
                             <p tal:condition = "r/graphdefs_info"><strong>Graph Definitions:</strong></p>
                             <!-- GraphDefs -->
@@ -265,7 +267,7 @@ $(document).ready(function(){
         <!-- ZenPack Category -->
 
         <div id="zenpack_category" class="tab-pane fade">
-            <div class="col-xs-3 bs-docs-sidebar">
+            <div class="col-xs-3 bs-docs-sidebar zen-category-sidebar">
                 <ul class="nav nav-tabs nav-stacked fixed">
                     <h4>ZenPacks: Table of Contents</h4>
                     <tal:block tal:repeat="t objects">
@@ -276,8 +278,8 @@ $(document).ready(function(){
                     </tal:block>
                 </ul>
             </div>
-            <div class="col-xs-9">
-                <div id = "zenpack_data" class="bs-docs-content"  style= " position: fixed; overflow-y: auto; height: 100%; padding-bottom: 60px;">
+            <div class="col-xs-9 col-xs-offset-3">
+                <div id = "zenpack_data" class="bs-docs-content">
                     <tal:block tal:repeat="t objects">
 
                         <tal:block tal:repeat="r t/zenpack_sort">
@@ -287,8 +289,8 @@ $(document).ready(function(){
                             <p><strong>Template Name: </strong><em tal:content="r/secondary"/></p>
                             <p><strong>Device Class: </strong><em tal:content="r/tertiary"/></p>
                             <p tal:condition = "r/template_description"><strong>Description:</strong> <em tal:content="r/template_description"/></p>
-                            
-                            
+
+
                             <p tal:condition = "r/datasources_info"><strong>Data Sources:</strong></p>
                             <!-- DataSources -->
                             <tal:block tal:repeat="ds r/datasources_info">
@@ -301,14 +303,14 @@ $(document).ready(function(){
                                  </tal:block>
                             </tal:block>
 
-                            
+
                             <p tal:condition = "r/thresholds_info"><strong>Thresholds:</strong></p>
                             <!-- Thresholds -->
                             <tal:block tal:repeat="th r/thresholds_info">
                                 <p>Name: <em tal:content="th/threshold_id"/>;&nbsp;&nbsp;Type: <em tal:content="th/threshold_type"/><span tal:condition="th/threshold_min">;&nbsp;&nbsp; Min: <em tal:content="th/threshold_min"/></span><span tal:condition="th/threshold_max">;&nbsp;&nbsp;Max: <em tal:content="th/threshold_max"/></span></p>
                                 <p style = "margin-left: 22px;" tal:condition="th/threshold_description">Description: <em tal:content="th/threshold_description"/></p>
                             </tal:block>
-                            
+
 
                             <p tal:condition = "r/graphdefs_info"><strong>Graph Definitions:</strong></p>
                             <!-- GraphDefs -->
