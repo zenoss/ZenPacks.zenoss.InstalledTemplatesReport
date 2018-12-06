@@ -17,10 +17,10 @@ class ExampleComponent(DeviceComponent, ManagedEntity):
 
     _relations = ManagedEntity._relations + (
         ('exampleDevice', ToOne(ToManyCont,
-                                'ZenPacks.NAMESPACE.PACKNAME.ExampleDevice.ExampleDevice',
-                                'exampleComponents',
-                                ),
-         ),
+            'ZenPacks.NAMESPACE.PACKNAME.ExampleDevice.ExampleDevice',
+            'exampleComponents',
+            ),
+        ),
     )
 
     # Defining the "perfConf" action here causes the "Graphs" display to be

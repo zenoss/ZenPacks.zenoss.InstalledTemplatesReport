@@ -15,7 +15,6 @@ from Products.ZenCollector.services.config import CollectorConfigService
 # Your daemon configuration service should almost certainly subclass
 # CollectorConfigService to make it as easy as possible for you to implement.
 class ExampleConfigService(CollectorConfigService):
-
     """
     ZenHub service for the zenexample collector daemon.
     """
@@ -67,7 +66,7 @@ class ExampleConfigService(CollectorConfigService):
     # _createDeviceProxy method above.
     def _getDataPoints(
             self, proxy, deviceOrComponent, deviceId, componentId, perfServer
-    ):
+            ):
         for template in deviceOrComponent.getRRDTemplates():
             dataSources = [ds for ds
                            in template.getRRDDataSources('Example Protocol')
@@ -87,7 +86,7 @@ class ExampleConfigService(CollectorConfigService):
                         minv=dp.rrdmin,
                         maxv=dp.rrdmax,
                         exampleProperty=ds.exampleProperty,
-                    )
+                        )
 
                     if componentId:
                         dpInfo['componentDn'] = getattr(
@@ -105,9 +104,9 @@ class ExampleConfigService(CollectorConfigService):
 if __name__ == '__main__':
     from Products.ZenHub.ServiceTester import ServiceTester
     tester = ServiceTester(ExampleConfigService)
-
     def printer(config):
         # Fill this out
         print config.datapoints
     tester.printDeviceProxy = printer
     tester.showDeviceInfo()
+

@@ -8,7 +8,7 @@ from ..ExampleDevice import ExampleDevice
 from ..ExampleComponent import ExampleComponent
 
 
-# IRelatable Adapters
+### IRelatable Adapters
 
 class ExampleComponentRelatable(DeviceComponentRelatable):
     adapts(ExampleComponent)
@@ -16,7 +16,7 @@ class ExampleComponentRelatable(DeviceComponentRelatable):
     group = 'Example Components'
 
 
-# IRelationsProvider Adapters
+### IRelationsProvider Adapters
 
 class ExampleDeviceRelationsProvider(BaseRelationsProvider):
     adapts(ExampleDevice)

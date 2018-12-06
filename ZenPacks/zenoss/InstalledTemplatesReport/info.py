@@ -21,7 +21,6 @@ from ZenPacks.NAMESPACE.PACKNAME.interfaces \
 
 
 class ExampleDataSourceInfo(RRDDataSourceInfo):
-
     """
     Defines API access for this datasource.
     """

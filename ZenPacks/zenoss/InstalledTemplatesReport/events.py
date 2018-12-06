@@ -1,5 +1,4 @@
 class ExamplePreEventPlugin(object):
-
     def apply(self, eventProxy, dmd):
         event = eventProxy._zepRawEvent.event
 
@@ -9,7 +8,6 @@ class ExamplePreEventPlugin(object):
 
 
 class ExamplePostEventPlugin(object):
-
     def apply(self, eventProxy, dmd):
         event = eventProxy._zepRawEvent.event
 

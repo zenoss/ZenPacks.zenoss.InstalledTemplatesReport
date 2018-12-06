@@ -26,7 +26,6 @@ else:
 
 
 class IExampleDataSourceInfo(IRRDDataSourceInfo):
-
     """
     Defines what fields should be displayed on the edit dialog for this
     datasource in the Zenoss web interface.
@@ -38,7 +37,7 @@ class IExampleDataSourceInfo(IRRDDataSourceInfo):
     exampleProperty = SingleLineText(
         title=_t(u'Example Property'),
         group=_t(u'Example Protocol'),
-    )
+        )
 
 
 class IExampleComponentInfo(IComponentInfo):

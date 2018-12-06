@@ -3,7 +3,6 @@ from Products.ZenRelations.RelSchema import ToManyCont, ToOne
 
 
 class ExampleDevice(Device):
-
     """
     Example device subclass. In this case the reason for creating a subclass of
     device is to add a new type of relation. We want many "ExampleComponent"
@@ -22,8 +21,8 @@ class ExampleDevice(Device):
     # of our custom "ExampleComponent" class.
     _relations = Device._relations + (
         ('exampleComponents', ToManyCont(ToOne,
-                                         'ZenPacks.NAMESPACE.PACKNAME.ExampleComponent.ExampleComponent',
-                                         'exampleDevice',
-                                         ),
-         ),
+            'ZenPacks.NAMESPACE.PACKNAME.ExampleComponent.ExampleComponent',
+            'exampleDevice',
+            ),
+        ),
     )
