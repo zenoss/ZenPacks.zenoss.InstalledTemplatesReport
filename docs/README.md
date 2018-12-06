@@ -5,15 +5,13 @@ The InstalledTemplatesReport ZenPack provides a report of all the Monitoring Tem
 
 [zenoss-toc]
 
-Releases
---------
+## Releases
 
 Version 1.1.2- <a rel="nofollow" class="external" href="http://wiki.zenoss.org/download/zenpacks/ZenPacks.zenoss.InstalledTemplatesReport/1.1.2/ZenPacks.zenoss.InstalledTemplatesReport-1.1.2.egg">Download</a>
 : Released on 2018/12/05
 : Compatible with Zenoss 6.2.x, 6.3.x and Zenoss Cloud</dd>
 
-Background
-----------
+## Background
 
 The ZenPack provides a report of all the Monitoring Templates installed in a Zenoss instance, drawing together many different attributes that are not otherwise found in a text format such as:
 
@@ -28,9 +26,9 @@ The user has the ability to view the templates by sorting through Template Name,
 
 ## Usage
 
-1. Click Reports
-2. Under Reports, expand Monitoring Capabilities Reports
-3. Select Installed Templates to generate a report for all Templates in your Zenoss instance
+1. Click Reports.
+2. Under Reports, expand Monitoring Capabilities Reports.
+3. Select Installed Templates to generate a report for all Templates in your Zenoss instance.
 4. Click "Sort By:" to sort templates by Template Name, ZenPack Name or Device Class. The default view is a sort by Template Name.
 5. Click "Export" to export current view in the right pane to a PDF file.
 
@@ -38,7 +36,7 @@ The user has the ability to view the templates by sorting through Template Name,
 
 ## Sample Report
 
-[Report_Example.png]: /sites/default/files/zenpack/InstalledTemplateReports/Report_Example.png
+[Report_Example.png]: /sites/default/files/zenpack/Installed%20Templates%20Report/Report_Example.png
 [![][Report_Example.png]][Report_Example.png]
 
 <br clear=all>
